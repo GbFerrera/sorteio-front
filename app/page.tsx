@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Instagram, Check, X } from 'lucide-react';
+import { Instagram, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { Label } from '@/components/ui/label'; 
 
 export default function Follow() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -21,17 +21,9 @@ export default function Follow() {
   const [showFollowModal, setShowFollowModal] = useState(false);
   const [errors, setErrors] = useState<{instagram?: string}>({});
   
-  // Função para formatar telefone
-  const formatPhone = (value: string) => {
-    const numbers = value.replace(/\D/g, '');
-    if (numbers.length <= 10) {
-      return numbers.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
-    }
-    return numbers.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-  };
+
 
   const instagramProfileUrl = 'https://www.instagram.com/kabasacocamping';
-  const postUrl = 'https://www.instagram.com/p/SEU_POST_AQUI/';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   const { name, value } = e.target;
