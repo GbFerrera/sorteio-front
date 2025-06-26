@@ -235,15 +235,26 @@ const handleFollowClick = async () => {
               <div className="w-full space-y-3">
                 <Button
                   onClick={handleFollowClick}
-                  className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-medium py-6 text-base"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-medium py-6 text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Instagram className="mr-2 h-5 w-5" />
-                  Seguir no Instagram
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      <Instagram className="mr-2 h-5 w-5" />
+                      Seguir no Instagram
+                    </>
+                  )}
                 </Button>
                 <Button
                   onClick={() => setShowFollowModal(false)}
                   variant="outline"
-                  className="w-full bg-transparent border-white/20 text-white hover:bg-white/10"
+                  disabled={isSubmitting}
+                  className="w-full bg-transparent border-white/20 text-white hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Cancelar
                 </Button>
