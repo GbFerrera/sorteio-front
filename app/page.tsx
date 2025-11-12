@@ -159,7 +159,7 @@ const handleFollowClick = async () => {
                 <Check className="h-12 w-12 text-green-600" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Inscrição confirmada!</h2>
-              <p className="text-gray-600">Agora é só aguardar o resultado do sorteio!</p>
+              <p className="text-gray-600">Agora é só aguardar o resultado do sorteio!!</p>
             </motion.div>
           </motion.div>
         )}
